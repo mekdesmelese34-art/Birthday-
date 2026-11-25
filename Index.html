@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>መልካም ልደት የኔ ፍቅር ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans Ethiopic', sans-serif;
+            background: linear-gradient(135deg, #1a0b2e 0%, #3b185f 50%, #a12568 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 24px;
+            padding: 35px 25px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 10;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step-indicator {
+            font-size: 0.85rem;
+            color: #ffd166;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .emoji-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* ፎቶው በክብ ቅርጽ እንዲቀመጥ */
+        .couple-photo-container {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #ffd166;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .couple-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        h1, h2 {
+            color: #ffd166;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+
+        .love-list {
+            text-align: right;
+            list-style: none;
+            margin: 15px 0 25px;
+        }
+
+        .love-list li {
+            background: rgba(255, 255, 255, 0.12);
+            margin-bottom: 10px;
+            padding: 12px 15px;
+            border-radius: 12px;
+            font-size: 0.98rem;
+            text-align: left;
+            border-left: 4px solid #ffd166;
+        }
+
+        .letter-box {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+            font-size: 0.98rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            border: 1px dashed rgba(255, 209, 102, 0.5);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .btn-group.center {
+            justify-content: center;
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff4d6d, #ff758f);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Noto Sans Ethiopic', sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+            flex: 1;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.6);
+        }
+
+        button.prev-btn {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+        }
+
+        button.prev-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ርችት (Confetti) */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #ffd166;
+            top: -10px;
+            z-index: 1;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh) rotate(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ገጽ 1: መግቢያ -->
+    <div class="page active" id="page1">
+        <div class="step-indicator">ገጽ 1 / 7</div>
+        <div class="emoji-icon">🎂</div>
+        <h1>መልካም ልደት የኔ ፍቅር!</h1>
+        <p>ዛሬ ለእኔ በዓለም ላይ ካሉ ቀናት ሁሉ እጅግ ልዩ ቀን ነው። ምክንያቱም የሕይወቴ ብርሃን፣ ምርጥ ጓደኛዬ እና ውዱ ባሌ የተወለድክበት ቀን ነውና!</p>
+        <p>ይህንን ትንሽ ስጦታ ለአንተ ብዬ አዘጋጅቼዋለሁ። ሁሉንም 7 ገጾች እስከ መጨረሻው ተመልከታቸው ❤️</p>
+        <div class="btn-group center">
+            <button onclick="nextPage(2)">ጀምር ✨</button>
+        </div>
+    </div>
+
+    <!-- ገጽ 2: ታሪካችን -->
+    <div class="page" id="page2">
+        <div class="step-indicator">ገጽ 2 / 7</div>
+        <div class="emoji-icon">💑</div>
+        <h2>የእኛ ውብ ታሪክ</h2>
+        <p>ከተዋወቅንበት ቀን ጀምሮ እስከ ዛሬ ድረስ ያሳለፍናቸው እያንዳንዱ ቀናት ለእኔ ትልቅ ትርጉም አላቸው።</p>
+        <p>አብረን የሳቅንባቸው፣ የተደጋገፍንባቸው እና ሕይወትን አብረን የገነባንባቸው ጊዜያት ሁሉ ከምንም በላይ ውድ ናቸው። አንተ ከጎኔ በመኖርህ ሁልጊዜ እድለኛ እንደሆንኩ ይሰማኛል።</p>
+        <div class="btn-group">
+            <button class="prev-btn" onclick="nextPage(1)">← ተመለስ</button>
+            <button onclick="nextPage(3)">ቀጥል →</button>
+        </div>
+    </div>
+
+    <!-- ገጽ 3: የምወድልህ ባህሪያት (ፎቶ የገባበት) -->
+    <div class="page" id="page3">
+        <div class="step-indicator">ገጽ 3 / 7 💖</div>
+        <h2>በአንተ ውስጥ የምወዳቸው ነገሮች</h2>
+        
+        <!-- ያንቺና የሱ ፎቶ እዚህ ይገባል (የፋይሉን ስም photo.jpg ብለሽ ብታስቀምጪው ይመረጣል) -->
+        <div class="couple-photo-container">
+            <img src="photo.jpg" alt="የእኛ ፎቶ" class="couple-photo">
+        </div>
+
+        <ul class="love-list">
+          
+        
+            <li>✨ ሁልጊዜ ፈገግ እንድል የምታደርግበት ድንቅ ባህሪህ</li>
+            <li>✨ ታማኝነትህ፣ ቅንነትህ እና ትልቅ ልብህ</li>
+        </ul>
+        <div class="btn-group">
+            <button class="prev-btn" onclick="nextPage(2)">← ተመለስ</button>
+            <button onclick="nextPage(4)">ቀጥል →</button>
+        </div>
+    </div>
+
+    <!-- ገጽ 4: ምስጋና -->
+    <div class="page" id="page4">
+        <div class="step-indicator">ገጽ 4 / 7</div>
+        <div class="emoji-icon">🙏</div>
+        <h2>አመሰግናለሁ ወርቁዬ የኔ ባል </h2>
+        <p>ምርጥ ባል፣ ታማኝ አጋር እና የልቤ መጠጊያ ስለሆንክ ከልብ አመሰግንሃለሁ።</p>
+        <p>በየቀኑ ለምታደርግልኝ ነገር ሁሉ፣ ድካሜን ስለምትጋራኝ እና ሕይወቴን ስለምታሳምረው ምስጋናዬ ወሰን የለውም።</p>
+        <div class="btn-group">
+            <button class="prev-btn" onclick="nextPage(3)">← ተመለስ</button>
+            <button onclick="nextPage(5)">ቀጥል →</button>
+        </div>
+    </div>
+
+    <!-- ገጽ 5: የልደት ምኞት -->
+    <div class="page" id="page5">
+        <div class="step-indicator">ገጽ 5 / 7</div>
+        <div class="emoji-icon">🌟</div>
+        <h2>የአዲሱ ዓመት ምኞቴ</h2>
+        <p>በዚህ አዲስ የዕድሜ ዘመንህ ፈጣሪ ረጅም ዕድሜ፣ ሙሉ ጤና፣ ስኬት እና የልብህን መሻት ሁሉ እንዲሰጥህ እመኛለሁ።</p>
+        <p>የምታስበው እና የምታቅደው ሁሉ እንዲሳካልህ ሁልጊዜ ከጎንህ ሆኜ እጸልያለሁ፣ እደግፍሃለሁም!</p>
+        <div class="btn-group">
+            <button class="prev-btn" onclick="nextPage(4)">← ተመለስ</button>
+            <button onclick="nextPage(6)">ቀጥል →</button>
+        </div>
+    </div>
+
+    <!-- ገጽ 6: የፍቅር ደብዳቤ -->
+    <div class="page" id="page6">
+        <div class="step-indicator">ገጽ 6 / 7</div>
+        <div class="emoji-icon">💌</div>
+        <h2>ከልቤ ነው </h2>
+        <div class="letter-box">
+            ባሌ አለሜ ፣<br><br>
+            ቃላት ሊገልጹት ከሚችሉት በላይ እወድሃለሁ። ሕይወትን ከአንተ ጋር መኖር ትልቅ በረከት ነው። ዛሬም፣ ነገም፣ ለዘላለምም ምርጫዬ አንተው ነህ። መልካም ልደት የኔ ንጉሥ!<br><br>
+            <strong>ሁልጊዜ የምትወድህ ባለቤትህ ❤️</strong>
+        </div>
+        <div class="btn-group">
+            <button class="prev-btn" onclick="nextPage(5)">← ተመለስ</button>
+            <button onclick="nextPage(7); launchConfetti();">መጨረሻውን እይ 🎉</button>
+        </div>
+    </div>
+
+    <!-- ገጽ 7: መጨረሻ / ሰርፕራይዝ -->
+    <div class="page" id="page7">
+        <div class="step-indicator">ገጽ 7 / 7</div>
+        <div class="emoji-icon">🥂🎁</div>
+        <h1>መልካም ልደት!</h1>
+        <p>ሁሉንም 7 ገጾች ስለጨረስክ አመሰግናለሁ የኔ ፍቅር!</p>
+        <p style="color: #ffd166; font-weight: 600;">ዘመንክ ሁሉ የተባረከ የሁን 😘❤️</p>
+        <div class="btn-group">
+            <button class="prev-btn" onclick="nextPage(1)">እንደገና እይ 🔄</button>
+            <button onclick="launchConfetti()">ርችት አብራ 🎆</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function nextPage(pageNumber) {
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => page.classList.remove('active'));
+        document.getElementById('page' + pageNumber).classList.add('active');
+    }
+
+    function launchConfetti() {
+        const colors = ['#ffd166', '#ff4d6d', '#06d6a0', '#118ab2', '#ffffff'];
+        for (let i = 0; i < 60; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            confetti.style.opacity = Math.random();
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 4000);
+        }
+    }
+</script>
+
+</body>
+</html>
